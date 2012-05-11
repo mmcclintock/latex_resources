@@ -1,0 +1,76 @@
+% latex template for presentations
+% written by Michael McClintock
+
+\RequirePackage[l2tabu, orthodox]{nag} % warnings for obsolete stuff
+\documentclass[english,serif,professionalfont]{beamer} % use the beamer package
+
+% font setup
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage[no-math]{fontspec} % keep standard math
+    \setmainfont[Ligatures=TeX]{Linux Libertine}
+    \setsansfont[Ligatures=TeX]{Linux Biolinum}
+    \setmonofont[Ligatures=TeX]{Inconsolata}
+\else
+    \usepackage[T1]{fontenc}
+    \usepackage{inconsolata}
+\fi
+\usepackage{microtype}
+
+% useful packages
+\usepackage{graphicx} % including graphics (use eps)
+\usepackage{amsmath,amssymb,cancel,bm} % math \bm for bold math
+\usepackage{cleveref} % convenient refrencing use \Cref
+\usepackage{url} % format urls
+\usepackage[ % SI units
+    load-configurations=abbreviations,
+    separate-uncertainty=true, % plus minus in uncertainty
+    inter-unit-product=\ensuremath{{}\cdot{}}, % dot between units
+    per-mode=symbol-or-fraction % per style
+]{siunitx}
+\usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
+\setlength{\parindent}{0cm}\usepackage{parskip} % paragraph skip
+\usepackage{minted}  % code highlighting requires pygments
+
+% \usepackage{paralist} \usepackage{multicol} beter enumerate/itemize
+% \usepackage[english]{babel} % other languages
+% \usepackage[nottoc,numbib]{tocbibind} % refs in toc
+% \usepackage{todonotes} % use \todo{blah blah} options inline/noline/nolist/color
+
+
+\begin{document}
+
+\begin{frame}{A sample slide}
+    Stuff here 
+    \[\SI{4500}{\volt\per\meter}\]
+    \[x^{2}+y^{2}=z^{2}\]
+\end{frame}
+
+%\begin{frame}{Example Figure}
+%    \begin{figure}[h!]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{pic.eps}
+%    \caption{Minkowski diagram of clock paradox}
+%    \label{fig:mink}
+%    \end{figure}
+%\end{frame}
+
+
+% bliography need bibtex file refs.bib
+%\setbeamertemplate{frametitle continuation}[from second]
+%\setbeamertemplate{bibliography item}[text]
+%\begin{frame}[allowframebreaks]{References}
+%    \small
+%    \bibliographystyle{ieeetr}
+%    \bibliography{refs}
+%\end{frame}
+
+
+% appendices consider using the appendix package
+%\appendix
+%\renewcommand\thesection{Appendix \Alph{section}}
+
+%input whole file of code
+%\inputminted[options]{language}{filename}
+
+\end{document}

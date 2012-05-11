@@ -1,0 +1,99 @@
+% latex template for a report
+% written by Michael McClintock
+
+\RequirePackage[l2tabu, orthodox]{nag} % warnings for obsolete stuff
+\documentclass[12pt,a4paper]{article}  % article class
+
+% font setup
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage[no-math]{fontspec} % keep standard math
+    \setmainfont[Ligatures=TeX]{Linux Libertine}
+    \setsansfont[Ligatures=TeX]{Linux Biolinum}
+    \setmonofont[Ligatures=TeX]{Inconsolata}
+\else
+    \usepackage[T1]{fontenc}
+    \usepackage{inconsolata}
+\fi
+\usepackage{microtype}
+
+% useful packages
+\usepackage[svgnames]{xcolor}          % color commands
+\usepackage{graphicx}                  % including graphics (use eps)
+\usepackage[margin=20mm]{geometry}     % set margins
+\usepackage{amsmath,amssymb,cancel,bm} % math \bm for bold math
+\usepackage[hidelinks]{hyperref}       % clickable links
+\usepackage{url}                       % format urls
+\usepackage{cleveref}                  % convenient refrencing use \Cref
+\usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
+\usepackage{setspace}\onehalfspacing               % 1.5 line spacing
+\setlength{\parindent}{0cm}\usepackage{parskip}    % paragraph skip
+\usepackage[                                   % SI units
+    load-configurations=abbreviations,         % unit abrev.
+    separate-uncertainty=true,                 % plus minus in uncertainty
+    inter-unit-product=\ensuremath{{}\cdot{}}, % dot between units
+    per-mode=symbol-or-fraction                % per style
+]{siunitx}
+% \usepackage{todonotes} % use \todo{blah blah} options inline/noline/nolist/color
+% \usepackage{paralist} \usepackage{multicol} beter enumerate/itemize
+% \usepackage{minted}  % code highlighting requires pygments
+% \usepackage[english]{babel} % other languages
+% \usepackage[nottoc,numbib]{tocbibind} % refs in toc
+
+\begin{document}
+
+General report template.
+
+% title page
+%\begin{titlepage}
+%\begin{center}
+%\textsc{\LARGE Latex Template}\\[1cm]
+%{ \huge Example Title Page}\\[2cm]
+%\begin{minipage}[t]{0.45\columnwidth} \large
+%\begin{description}
+%\itemsep2mm
+%\item [\emph{Author:}] Michael McClintock
+%\item [\emph{Student Number:}] 41757129
+%\item [\emph{Date:}] May 10, 2012
+%\item [\emph{Email:}] michael.mcclintock@uqconnect.edu.au
+%\end{description}
+%\end{minipage}
+%\begin{minipage}[t]{0.5\columnwidth} \large
+%\begin{description}
+%\itemsep2mm
+%\item [\emph{Supervisor:}] blah blah
+%\item [\emph{Co-supervisor:}] blah blah
+%\end{description}
+%\end{minipage}
+%\vfill
+%\end{center}
+%\end{titlepage}
+
+%\listoftodos
+% \todo{item to do}
+
+% table of contents
+%\tableofcontents
+%\thispagestyle{empty}
+%\setcounter{page}{0}
+
+% example for including pictures remember to use svg->eps
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.37\textwidth]{intersection.eps}
+%\caption{Proposed intersection}
+%\label{int}
+%\end{figure}
+
+% bliography need bibtex file refs.bib
+%\bibliographystyle{ieeetr}
+%\bibliography{refs.bib}
+
+% appendices consider using the appendix package
+%\appendix
+%\renewcommand\thesection{Appendix \Alph{section}}
+
+%input whole file of code
+%\inputminted[options]{language}{filename}
+
+\end{document}
